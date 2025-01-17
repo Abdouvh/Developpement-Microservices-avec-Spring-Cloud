@@ -1,0 +1,19 @@
+server:
+  port: 8889
+
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Abdouvh/config-service
+          search-paths: src/main/resources
+          default-label: main
+          clone-on-start: true
+
+logging:
+  level:
+    org.springframework.cloud.config.server: DEBUG
+    org.eclipse.jgit: DEBUG
